@@ -6,13 +6,16 @@
 # This file was created with the following call:
 #   .Call("wrap__make_graphIDW_wrappers", use_symbols = TRUE, package_name = "graphIDW")
 
+#' @docType package
 #' @usage NULL
 #' @useDynLib graphIDW, .registration = TRUE
 NULL
 
 #' Return string `"Hello world!"` to R.
 #' @export
-hello_world <- function() .Call(wrap__hello_world)
+graph_idw_rust <- function(from_nodes, values, to_nodes, adj_from, adj_to, adj_weight, p, max_dist) {
+  .Call(wrap__graph_idw_rust, from_nodes, values, to_nodes, adj_from, adj_to, adj_weight, p, max_dist)
+}
 
 
 # nolint end

@@ -32,7 +32,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "graphIDW"
+name = "graphidw"
 version = "0.1.0"
 dependencies = [
  "extendr-api",

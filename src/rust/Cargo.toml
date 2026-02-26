@@ -1,17 +1,19 @@
 [package]
-name = 'graphIDW'
+name = "graphidw"
 publish = false
-version = '0.1.0'
-edition = '2021'
-rust-version = '1.65'
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.65"
 
 [lib]
-crate-type = [ 'staticlib' ]
-name = 'graphIDW'
+# Zmieniono na cdylib, aby wygenerować plik .dll dla R
+crate-type = ["cdylib"]
+name = "graphidw"
 
 [dependencies]
-extendr-api = '0.8.1'
+extendr-api = "0.8.1"
 
 [profile.release]
+panic = "abort"
 lto = true
 codegen-units = 1
